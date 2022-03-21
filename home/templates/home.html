@@ -1,1 +1,33 @@
-Heloo......
+{% extends 'base.html' %}
+{% load static %}
+
+<!-- This is where your title text will go e.g Login or Home -->
+{% block title %}
+    Home
+{% endblock %}
+
+{% block css %}
+<!-- This is where you link your css. 
+    NOTE: Bootstrap css and fontawesome are already linked so dont link them again -->
+    <link rel="stylesheet" href="{% static 'css/all.css' %}">
+{% endblock %}
+
+{% block body %}
+<!-- This where all the content inside your opening and closing body tags will go.
+     DO NOT INCLUDE THE BODY TAG. JUST THE CONTENT INSIDE IT. -->
+    <h1>Hello world...</h1>
+    <img src="media/python3.png" height="100px" alt="">
+
+
+
+
+
+
+
+{% endblock %}
+
+{% block javascript %}
+<!-- This is where you link your javascript files. 
+    NOTE: Jquery and Bootstrap js are already linked so do not link them again -->
+    <script src="{% static 'js/main.js' %}"></script>
+{% endblock %}
