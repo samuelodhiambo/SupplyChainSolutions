@@ -9,14 +9,25 @@
 {% block css %}
 <!-- This is where you link your css. 
     NOTE: Bootstrap css and fontawesome are already linked so dont link them again -->
-    <link rel="stylesheet" href="{% static 'css/' %}">
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
 {% endblock %}
 
 {% block body %}
 <!-- This where all the content inside your opening and closing body tags will go.
      DO NOT INCLUDE THE BODY TAG. JUST THE CONTENT INSIDE IT. -->
-    <h1>Hello Login...</h1>
-    <img src="/media/python3.png" height="100px" alt="">
+     <section>
+        <form class="form">
+           <strong><h2>Log In Account</h2></strong>
+           <ul class="inputs">
+               <li>Username<br><label for="Username">
+               <input type="text" id="username" placeholder="Username" name="username"></label></li> <br>
+               <li>Password<br><label for="Password">
+               <input type="password" id="password" placeholder="Password" name="Password"></label></li> <br>
+           </ul>
+           <button id="btn">LOG IN</button> 
+        </form>
+
+    </section>
 
 
 
