@@ -1,14 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="SupplyChainSolutions/userAuth/static/css/signup.css">
-    <title>Sign Up</title>
-</head>
-<body>
-    <div class="signup-box">
+{% extends 'base.html' %}
+{% load static %}
+
+<!-- This is where your title text will go e.g Login or Home -->
+{% block title %}
+    Sign Up
+{% endblock %}
+
+{% block css %}
+<!-- This is where you link your css. 
+    NOTE: Bootstrap css and fontawesome are already linked so dont link them again -->
+    <link rel="stylesheet" href="{% static 'css/signup.css' %}">
+{% endblock %}
+
+{% block body %}
+<!-- This where all the content inside your opening and closing body tags will go.
+     DO NOT INCLUDE THE BODY TAG. JUST THE CONTENT INSIDE IT. -->
+     <div class="signup-box">
         <h1>Sign Up</h1>
         <h4>New here! Sign up and make your sourcing easier</h4>
         <form>
@@ -35,6 +42,10 @@
         </p>
     </div>
     <p class="para-2">Already have an account? <a href="login.html">Login here</a></p>
+{% endblock %}
+
+{% block javascript %}
+<!-- This is where you link your javascript files. 
+    NOTE: Jquery and Bootstrap js are already linked so do not link them again -->
     <script src="{% static 'js/' %}"></script>
-</body>
-</html>
+{% endblock %}
