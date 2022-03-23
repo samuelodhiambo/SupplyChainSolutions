@@ -85,13 +85,20 @@ Home
 <section id="product">
   <h2>Recently Added Products</h2>
   <div class="row d-flex">
-    <div class="col-4">
-      <img src="/media/furniture.jpeg" class="img img-fluid" alt="furniture">
-      <h5>Furniture</h5>
-      <p>Bed</p>
-      <button type="submit" id="btnT">Add to cart</button>
+    {% for product in products %}
+    <div class="col-lg-4">
+      <img src="{{ product.pimage.url }}" class="img img-fluid" alt="furniture">
+      <h5>{{ product.product_name }}</h5>
+      <p>{{ product.description }}</p>
+      <form action="{% url 'showCart' %}" method="post">
+        {% csrf_token %}
+        <input type="hidden" name="pk" value="{{ product.id }}">
+        <input type="hidden" name="order_amount" value="1">
+        <button type="submit" id="btnT">Add to cart</button>
+      </form>
     </div>
-    <div class="col-4">
+    {% endfor %}
+    <!-- <div class="col-4">
       <img src="/media/Tcl.png" class="img img-fluid" alt="Tv">
       <h5>Electronics</h5>
       <p>Tv</p>
@@ -126,7 +133,7 @@ Home
       <h5>Utensils</h5>
       <p>Sufuria</p>
       <button type="submit" id="btnT">Add to cart</button>
-    </div>
+    </div> -->
   </div>
 </section>
 <br>
