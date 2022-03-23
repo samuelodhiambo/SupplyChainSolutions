@@ -48,13 +48,30 @@ def ajaxAddCart(request):
         order = get_object_or_404(Order, id=id)
         order.order_amount = request.POST.get('order_amount')
         # save the data and after fetch the object in instance
-        if order.save():
-            instance = Order.objects.filter(id=id)
-            # serialize in new friend object in json
-            ser_instance = serializers.serialize('json', [ instance, ])
+        try:
+            order.save()
+            print("Iannnnnnnnnnnnnnnnnnnnn")
+            instance = Order.objects.get(id=id)
+            # product = Order.objects.filter(id=input.product)
+            # serialize in new object in json
+            total = (instance.product.price * instance.order_amount)
+            print(total)
+            order = {
+                'id': instance.id,
+                'product': {
+                    'product_name': instance.product.product_name,
+                    'pimage': instance.product.pimage.url
+                },
+                'order_amount': instance.order_amount,
+                'total': total
+            }
+            print(total)
+            ser_instance = order
+            # ser_instance = serializers.serialize('json', [ instance, ])
+            print(ser_instance) 
             # send to client side.
             return JsonResponse({"instance": ser_instance}, status=200)
-        else:
+        except Exception as e:
             # some form errors occured.
             return JsonResponse({"error": "failed to update amount"}, status=400)
 

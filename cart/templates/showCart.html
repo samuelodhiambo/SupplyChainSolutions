@@ -31,17 +31,22 @@
                             </tr>
                         </thead>
                         <tbody>
+                            {% for order in orders %}
                             <tr>
                                 <td style="width: 5%;">
-                                    <div><img class="img-fluid" src="/media/rice.jpg"></div>
+                                    <div><img class="img-fluid" src="{{ order.product.pimage.url }}"></div>
                                 </td>
-                                <td>Pishori Rice</td>
+                                <td>{{ order.product.product_name }}</td>
                                 {% csrf_token %}
-                                <td class="w-25 pishori"><button class="btn btn-primary bg-gray minus" type="button">-</button><input type="number" style="width: 30%;" value="1" min="1"><button class="btn btn-primary bg-gray plus" type="button">+</button></td>
-                                <td>Kshs. 2000</td>
+                                <td class="w-25 pishori"><button class="btn btn-primary bg-gray minus" type="button">-</button><input type="number" style="width: 30%;" value="{{ order.order_amount }}" min="1"><button class="btn btn-primary bg-gray plus" type="button">+</button></td>
+                                <input type="hidden" name="pk" value="{{ order.id }}">
+                                <td id="{{ order.id }}">{{ order.total }}</td>
                                 <td><a href="#"><i class="fa fa-trash-o"></i></a></td>
+                                {% empty %}
+                                <td colspan="5" class="text-center">Your cart is empty</td>
                             </tr>
-                            <tr>
+                            {% endfor %}
+                            <!-- <tr>
                                 <td>
                                     <div><img class="img-fluid" src="/media/rice.jpg"></div>
                                 </td>
@@ -49,7 +54,7 @@
                                 <td><button class="btn btn-primary bg-gray minus" type="button">-</button><input type="number" style="width: 30%;" value="1" min="1"><button class="btn btn-primary bg-gray plus" type="button">+</button></td>
                                 <td>Kshs. 1200</td>
                                 <td><a href="#"><i class="fa fa-trash-o"></i></a></td>
-                            </tr>
+                            </tr> -->
                         </tbody>
                     </table>
                 </div>

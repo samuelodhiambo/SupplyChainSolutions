@@ -9,7 +9,7 @@ class Order(models.Model):
         ('Processing', 'Processing'),
         ('Delivered', 'Delivered'),
     )
-    order_amount = models.IntegerField(null=True, blank=True)
+    order_amount = models.IntegerField(null=True, blank=True, default=1)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
     date_ordered = models.DateTimeField(auto_now_add=True, null=True)
@@ -21,3 +21,7 @@ class Order(models.Model):
 
     def __str__(self) -> str:
         return self.product.product_name
+
+    @property
+    def total(self):
+        return self.order_amount * self.product.price
