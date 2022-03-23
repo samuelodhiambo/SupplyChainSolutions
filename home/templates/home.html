@@ -20,28 +20,37 @@ Home
   <nav class="navbar navbar-expand-lg px-4">
     <div class="row d-flex">
 
-      <a class="navbar-brand" href="#"><img src="/media/download (1).png" class="img-fluid" alt=""></a>
+      <a class="navbar-brand" href="{% url 'home' %}"><img src="/media/download (1).png" class="img-fluid" alt=""></a>
     </div>
     <div class="collapse navbar-collapse" id="myNav">
       <div class="row d-flex">
         <ul class="navbar-nav mx-auto text-capitalize">
           <li class="nav-item active">
-            <a class="nav-link link-dark text-decoration-none" href="#home">home</a>
+            <a class="nav-link link-dark text-decoration-none" href="{% url 'home' %}">home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link link-dark text-decoration-none " href="#categories">Categories</a>
+            <a class="nav-link link-dark text-decoration-none " href="{% url 'showCart' %}">Cart</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link link-dark text-decoration-none" href="#product">Add Products</a>
+            <a class="nav-link link-dark text-decoration-none" href="{% url 'add' %}">Add Products</a>
+          </li>
+          {% if request.user.is_authenticated %}
+          <li class="nav-item">
+            <a class="nav-link link-dark text-decoration-none" href="{% url 'logout' %}">Logout</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link link-dark text-decoration-none" href="#signup">Signup</a>
+            {{ request.user }}
+          </li>
+          {% else %}
+          <li class="nav-item">
+            <a class="nav-link link-dark text-decoration-none" href="{% url 'signup' %}">Signup</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link link-dark text-decoration-none" href="#log in">Log in</a>
+            <a class="nav-link link-dark text-decoration-none" href="{% url 'login' %}">Log in</a>
           </li>
+          {% endif %}
         </ul>
-        <form action="/action_page.php" class="col-md-1" id="forml">
+        <form action="" class="col-md-1" id="forml">
           <input type="text" placeholder="Search.." class="" name="search">
         </form>
       </div>
