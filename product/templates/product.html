@@ -13,16 +13,21 @@
 {% endblock %}
 
 {% block body %}
-<!-- This where all the content inside your opening and closing body tags will go.
-     DO NOT INCLUDE THE BODY TAG. JUST THE CONTENT INSIDE IT. -->
-    <h1>Hello Product...</h1>
-    <img src="/media/python3.png" height="100px" alt="">
-
-
-
-
-
-
+     <form action="" class="shadow-lg" method="post">
+        <label class="form-label" for="product">Product Name: </label>
+        <input type="text" class="form-control" name="product" id="product" placeholder="Enter your product name...">
+        <label class="form-label" for="description">Product Description: </label>
+        <input type="text" class="form-control" name="descritpion" id="description" placeholder="Tell us a little more about your product...">
+        <label class="form-label" for="quantity">Quantities: </label>
+        <input type="text" class="form-control" name="quantity" id="quantity" placeholder="How much of your product do you have in stock?">
+        <label class="form-label" for="price">Unit price: </label>
+        <input type="text" class="form-control" name="price" id="price" placeholder="Enter your desired unit price...">
+        <label class="form-label" for="information">Additional Information: </label>
+        <textarea name="information" class="form-control" id="information" rows="5" placeholder="Tell us a little more about your product..."></textarea>
+        <label class="form-label" for="profile">Add a descriptive photo</label>
+        <input type="file" name="profile" id="profile">
+        <button type="submit" class="btn btn-primary btn-lg mt-2 ">Add product</button>
+    </form>
 
 {% endblock %}
 
