@@ -18,23 +18,27 @@
      <div class="signup-box">
         <h1>Sign Up</h1>
         <h4>New here! Sign up and make your sourcing easier</h4>
-        <form>
+        <form method="POST" action="{% url 'signup' %}">
+            {% csrf_token %}
+            {{ form.errors }}
+            <label>Username</label>
+            <input type="text" name="username" placeholder="Username"/>
             <label>First Name</label>
-            <input type="text" placeholder="First Name"/>
+            <input type="text" name="first_name" placeholder="First Name"/>
             <label>Last Name</label>
-            <input type="text" placeholder="Last Name"/>
+            <input type="text" name="last_name" placeholder="Last Name"/>
             <label>Email</label>
-            <input type="email" placeholder="Email"/>
+            <input type="email" name="email" placeholder="Email"/>
             <label>Phone Number</label>
-            <input type="phone-number" placeholder="+254 712345678"/>
+            <input type="phone-number" name="phone" placeholder="+254 712345678"/>
             <label>User type</label>
-            <input type="text" list="user-type" placeholder="Pick your user type"/>
+            <input type="text" name="user_type" list="user-type" placeholder="Pick your user type"/>
             <datalist id="user-type"> <option value="Supplier"><option value="Retailer"></datalist>
             <label>Password</label>
-            <input type="password" placeholder="Password"/>
+            <input type="password" name="password1" placeholder="Password"/>
             <label>Confirm Password</label>
-            <input type="password" placeholder="Confirm Password" />
-            <input type="button" value="Submit" />
+            <input type="password" name="password2" placeholder="Confirm Password" />
+            <input type="submit" value="Submit" />
         </form>
         <p>
             By clicking the Sign Up button,you agree to our <br />
