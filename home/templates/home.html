@@ -17,6 +17,8 @@
      DO NOT INCLUDE THE BODY TAG. JUST THE CONTENT INSIDE IT. -->
     <h1>Hello world...</h1>
     <img src="media/python3.png" height="100px" alt="">
+    {{ request.user.username }}
+    <a href="{% url 'logout' %}">Logout</a>
 
 
 
