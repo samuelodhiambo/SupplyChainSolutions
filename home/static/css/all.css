@@ -1,1 +1,89 @@
-@import 'style.css'
+
+.welcome {
+    width: 900px;
+    height: 500px;
+    padding: 150px;
+    border: 1px solid grey;
+    margin: 10px;
+    background-repeat: no-repeat;
+    background-image: url("/media/pic.jpeg");
+    background-size: 150%;
+    font-size: medium;
+  
+  }
+ 
+  .buttons {
+    color: black;
+    width: 200px;
+    display: block;
+    margin-top: 20px;
+ 
+  }
+ 
+  .btn {
+    display: block;
+    width: 230px;
+    border: 1px solid grey;
+    height: 50px;
+  }
+  #product {
+ background-color: aliceblue;
+ 
+  }
+  .img {
+    width:450px;
+    height: 300px;
+    border: auto;
+    margin: 2px;
+  }
+  body {
+   border:auto;
+   margin: 10px;
+   padding: auto;
+   justify-content: center;
+   background-color: whitesmoke;
+  }
+  #forml {
+    float:right;
+  }
+  footer {
+    display: block;
+ text-align: center;
+  }
+  #copy {
+    text-align: left;
+  }
+  .modern {
+    height:70px;
+    display: block;
+    display: block;
+    margin-left:auto ;
+    margin-right:auto;
+   width: 50%;
+   
+  }
+
+ .topnav {
+   padding: auto;
+   margin: 10px;
+ }
+ 
+ .btnT {
+   display: flex;
+   justify-content: right;
+ }
+ #form2  {
+   float: right;
+   display: block;
+   padding: 6px;
+   border: none;
+   margin-top: 8px;
+   margin-right: 16px;
+   font-size: 17px;
+   width: 500px;
+ 
+ }
+ .contact {
+   margin-left:auto ;
+   margin-right:auto;
+ }
