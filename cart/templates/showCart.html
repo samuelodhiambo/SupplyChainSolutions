@@ -3,20 +3,59 @@
 
 <!-- This is where your title text will go e.g Login or Home -->
 {% block title %}
-    Sign Up
+    Cart
 {% endblock %}
 
 {% block css %}
 <!-- This is where you link your css. 
     NOTE: Bootstrap css and fontawesome are already linked so dont link them again -->
-    <link rel="stylesheet" href="{% static 'css/' %}">
+    <link rel="stylesheet" href="{% static 'css/cart.css' %}">
 {% endblock %}
 
 {% block body %}
 <!-- This where all the content inside your opening and closing body tags will go.
      DO NOT INCLUDE THE BODY TAG. JUST THE CONTENT INSIDE IT. -->
-    <h1>Hello Show Cart...</h1>
-    <img src="/media/python3.png" height="100px" alt="">
+     <div class="container">
+        <div class="row">
+            <div class="col-md-1 col-lg-2"></div>
+            <div class="col-md-10 col-lg-8">
+                <div class="table-responsive text-center">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Product Name</th>
+                                <th>Quantity</th>
+                                <th>Price</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="width: 5%;">
+                                    <div><img class="img-fluid" src="/media/rice.jpg"></div>
+                                </td>
+                                <td>Pishori Rice</td>
+                                <td class="w-25 pishori"><button class="btn btn-primary bg-gray minus" type="button">-</button><input type="number" style="width: 30%;" value="1" min="1"><button class="btn btn-primary bg-gray plus" type="button">+</button></td>
+                                <td>Kshs. 2000</td>
+                                <td><a href="#"><i class="fa fa-trash-o"></i></a></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div><img class="img-fluid" src="/media/rice.jpg"></div>
+                                </td>
+                                <td>90 kg Sugar</td>
+                                <td><button class="btn btn-primary bg-gray minus" type="button">-</button><input type="number" style="width: 30%;" value="1" min="1"><button class="btn btn-primary bg-gray plus" type="button">+</button></td>
+                                <td>Kshs. 1200</td>
+                                <td><a href="#"><i class="fa fa-trash-o"></i></a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="col-md-1 col-lg-2"></div>
+        </div>
+    </div>
 
 
 
@@ -29,5 +68,5 @@
 {% block javascript %}
 <!-- This is where you link your javascript files. 
     NOTE: Jquery and Bootstrap js are already linked so do not link them again -->
-    <script src="{% static 'js/' %}"></script>
+    <script src="{% static 'js/cart.js' %}"></script>
 {% endblock %}

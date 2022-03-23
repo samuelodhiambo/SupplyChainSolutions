@@ -1,0 +1,12 @@
+.bg-gray {
+  background: gray;
+}
+
+.bg-gray:hover {
+  background-color: black;
+}
+
+.bg-gray:focus {
+  background-color: black;
+}
+
