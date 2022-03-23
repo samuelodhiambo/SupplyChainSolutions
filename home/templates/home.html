@@ -3,33 +3,147 @@
 
 <!-- This is where your title text will go e.g Login or Home -->
 {% block title %}
-    Home
+Home
 {% endblock %}
 
 {% block css %}
 <!-- This is where you link your css. 
     NOTE: Bootstrap css and fontawesome are already linked so dont link them again -->
-    <link rel="stylesheet" href="{% static 'css/all.css' %}">
+
+<link rel="stylesheet" href="{% static 'css/all.css' %}">
 {% endblock %}
 
 {% block body %}
 <!-- This where all the content inside your opening and closing body tags will go.
      DO NOT INCLUDE THE BODY TAG. JUST THE CONTENT INSIDE IT. -->
-    <h1>Hello world...</h1>
-    <img src="media/python3.png" height="100px" alt="">
-    {{ request.user.username }}
-    <a href="{% url 'logout' %}">Logout</a>
+<header>
+  <nav class="navbar navbar-expand-lg px-4">
+    <div class="row d-flex">
+
+      <a class="navbar-brand" href="#"><img src="/media/download (1).png" class="img-fluid" alt=""></a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNav">
+      <div class="row d-flex">
+        <ul class="navbar-nav mx-auto text-capitalize">
+          <li class="nav-item active">
+            <a class="nav-link link-dark text-decoration-none" href="#home">home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link link-dark text-decoration-none " href="#categories">Categories</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link link-dark text-decoration-none" href="#product">Add Products</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link link-dark text-decoration-none" href="#signup">Signup</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link link-dark text-decoration-none" href="#log in">Log in</a>
+          </li>
+        </ul>
+        <form action="/action_page.php" class="col-md-1" id="forml">
+          <input type="text" placeholder="Search.." class="" name="search">
+        </form>
+      </div>
+    </div>
+  </nav>
+</header>
+<section id="home">
+  <div class="row d-flex">
+    <div class="col-9">
+      <div style="height: 500px;">
+        <div class="h-75 d-inline-block" style="width: 900px;">
+          <div class="welcome">
+            <h2>Welcome To Supply Chain Solutions</h2>
+            <h4>Your all in one supplier at the click of a button</h4>
+            <br>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-3">
+      <div class="buttons">
+        <button class="btn" type="button">Food</button>
+        <br>
+        <button class="btn" type="button">Clothing</button>
+        <br>
+        <button class="btn" type="button">Hardware</button>
+        <br>
+        <button class="btn" type="button">Utensils</button>
+        <br>
+        <button class="btn" type="button">Electronics</button>
+        <br>
+        <button class="btn" type="button">Stationery</button>
+        <br>
+        <button class="btn" type="button">Furniture</button>
+      </div>
+    </div>
+  </div>
+</section>
+<br>
+<section id="product">
+  <h2>Recently Added Products</h2>
+  <div class="row d-flex">
+    <div class="col-4">
+      <img src="/media/furniture.jpeg" class="img img-fluid" alt="furniture">
+      <h5>Furniture</h5>
+      <p>Bed</p>
+      <button type="submit" id="btnT">Add to cart</button>
+    </div>
+    <div class="col-4">
+      <img src="/media/Tcl.png" class="img img-fluid" alt="Tv">
+      <h5>Electronics</h5>
+      <p>Tv</p>
+      <button type="submit" id="btnT">Add to cart</button>
+    </div>
+
+    <div class="col-4">
+      <img src="/media/fridge.jpg" class="img img-fluid" alt="Tv">
+      <h5>Electronics</h5>
+      <p>Fridge</p>
+      <button type="submit" id="btnT">Add to cart</button>
+    </div>
+  </div>
+
+  <div class="row product2">
+    <div class="col-4">
+      <img src="/media/foodunga.jpeg" class="img img-fluid" alt="unga">
+      <h5>Food</h5>
+      <p>Unga Bale</p>
+      <button type="submit" id="btnT">Add to cart</button>
+    </div>
+    <br>
+    <div class="col-4">
+      <img src="/media/hardware.jpg" class="img img-fluid" alt="unga">
+      <h5>Hardware</h5>
+      <p>Wire mesh</p>
+      <button type="submit" id="btnT">Add to cart</button>
+    </div>
+    <br>
+    <div class="col-4">
+      <img src="/media/sufuria.webp" class="img img-fluid" alt="unga">
+      <h5>Utensils</h5>
+      <p>Sufuria</p>
+      <button type="submit" id="btnT">Add to cart</button>
+    </div>
+  </div>
+</section>
+<br>
+<footer>
+  <img src="/media/download (1).png" class="modern img-fluid" alt="modern">
+  <br>
+  <img src="/media/contact-us.webp" class="modern img-fluid" alt="modern">
 
 
+  <br>
+  <div id="copy" class="text-center">Copyright 2022. All rights reserved.</div>
+  </div>
 
+  {% endblock %}
 
-
-
-
-{% endblock %}
-
-{% block javascript %}
-<!-- This is where you link your javascript files. 
+  {% block javascript %}
+  <!-- This is where you link your javascript files. 
     NOTE: Jquery and Bootstrap js are already linked so do not link them again -->
-    <script src="{% static 'js/main.js' %}"></script>
-{% endblock %}
+  <script src="{% static 'js/main.js' %}"></script>
+  {% endblock %}
