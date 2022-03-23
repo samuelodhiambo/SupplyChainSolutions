@@ -41,7 +41,13 @@
                                 <td class="w-25 pishori"><button class="btn btn-primary bg-gray minus" type="button">-</button><input type="number" style="width: 30%;" value="{{ order.order_amount }}" min="1"><button class="btn btn-primary bg-gray plus" type="button">+</button></td>
                                 <input type="hidden" name="pk" value="{{ order.id }}">
                                 <td id="{{ order.id }}">{{ order.total }}</td>
-                                <td><a href="#"><i class="fa fa-trash-o"></i></a></td>
+                                <td>
+                                    <form id="my_form" action="{% url 'delete' order.id %}" method="post">
+                                        {% csrf_token %}
+                                        <input type="hidden" name="pk" value="{{ order.id }}">
+                                        <a class="delete" href="javascript:{}" onclick="document.getElementById('my_form').submit()"><i class="fa fa-trash-o"></i></a>
+                                    </form>
+                                </td>
                                 {% empty %}
                                 <td colspan="5" class="text-center">Your cart is empty</td>
                             </tr>

@@ -1,8 +1,10 @@
 from django.shortcuts import render, redirect
 from .models import Product
 from .forms import ProductForm
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
+@login_required
 def addView(request, template="product.html"):
     if request.method == "POST":
         form = ProductForm(request.POST, request.FILES)

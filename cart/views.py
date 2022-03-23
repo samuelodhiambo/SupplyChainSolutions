@@ -9,6 +9,7 @@ from django.contrib.auth.decorators import login_required
 def addToCartView(request):
     return render(request)
 
+@login_required
 def showCartView(request, template="showCart.html"):
     orders = Order.objects.filter(user=request.user.id)
     order = Order()
@@ -41,6 +42,7 @@ def showCartView(request, template="showCart.html"):
         return render(request, template, context)
     return render(request, template, {'orders': orders})
 
+@login_required
 def ajaxAddCart(request):
     if request.method == "POST":
         # get the form data
@@ -75,6 +77,7 @@ def ajaxAddCart(request):
             # some form errors occured.
             return JsonResponse({"error": "failed to update amount"}, status=400)
 
+@login_required
 def deleteOrder(request, id):
     order = get_object_or_404(Order, id=id)
     if request.method == 'POST':
