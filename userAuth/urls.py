@@ -16,9 +16,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from .views import loginView, registerView, logoutView
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('login/', loginView, name="login"),
     path('signup/', registerView, name="signup"),
     path('logout/', logoutView, name="logout"),
-]
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

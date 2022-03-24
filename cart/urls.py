@@ -16,10 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from .views import addToCartView, showCartView, deleteOrder, ajaxAddCart
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('add/', addToCartView, name="addToCart"),
     path('show/', showCartView, name="showCart"),
     path('delete/<id>/', deleteOrder, name='delete'),
     path('ajaxAdd/', ajaxAddCart, name="ajaxAdd"),
-]
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
