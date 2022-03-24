@@ -11,6 +11,53 @@
     {% block css %} {% endblock %}
 </head>
 <body>
+    {% block header %}
+    <header>
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="{% url 'home' %}"><img src="/media/download (1).png" class="img-fluid" width="30%" alt=""></a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto text-capitalize mb-2 mb-lg-0">
+                    <li class="nav-item active">
+                      <a class="nav-link link-dark text-decoration-none" href="{% url 'home' %}">home</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link link-dark text-decoration-none " href="{% url 'showCart' %}">Cart</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link link-dark text-decoration-none" href="{% url 'add' %}">Add Products</a>
+                    </li>
+                    {% if request.user.is_authenticated %}
+                    <li class="nav-item">
+                      <a class="nav-link link-dark text-decoration-none" href="{% url 'logout' %}">Logout</a>
+                    </li>
+                    <li class="nav-item">
+                      {{ request.user }}
+                    </li>
+                    {% else %}
+                    <li class="nav-item">
+                      <a class="nav-link link-dark text-decoration-none" href="{% url 'signup' %}">Signup</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link link-dark text-decoration-none" href="{% url 'login' %}">Log in</a>
+                    </li>
+                    {% endif %}
+                  </ul>
+                <form class="d-flex">
+                  <input class="form-control-sm me-2" type="search" placeholder="Search" aria-label="Search">
+                  <!-- <button class="btn btn-outline-success" type="submit">Search</button> -->
+                </form>
+              </div>
+            </div>
+          </nav>
+
+        
+      </header>
+    {% endblock %}
     {% block body %} 
     
     <!-- Please do not touch this file. It is our base directory that imports for us botstrap and jquery -->
