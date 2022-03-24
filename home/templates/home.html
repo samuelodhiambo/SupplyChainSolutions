@@ -16,62 +16,17 @@ Home
 {% block body %}
 <!-- This where all the content inside your opening and closing body tags will go.
      DO NOT INCLUDE THE BODY TAG. JUST THE CONTENT INSIDE IT. -->
-<header>
-  <nav class="navbar navbar-expand-lg px-4">
-    <div class="row d-flex">
-
-      <a class="navbar-brand" href="{% url 'home' %}"><img src="/media/download (1).png" class="img-fluid" alt=""></a>
-    </div>
-    <div class="collapse navbar-collapse" id="myNav">
-      <div class="row d-flex">
-        <ul class="navbar-nav mx-auto text-capitalize">
-          <li class="nav-item active">
-            <a class="nav-link link-dark text-decoration-none" href="{% url 'home' %}">home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link link-dark text-decoration-none " href="{% url 'showCart' %}">Cart</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link link-dark text-decoration-none" href="{% url 'add' %}">Add Products</a>
-          </li>
-          {% if request.user.is_authenticated %}
-          <li class="nav-item">
-            <a class="nav-link link-dark text-decoration-none" href="{% url 'logout' %}">Logout</a>
-          </li>
-          <li class="nav-item">
-            {{ request.user }}
-          </li>
-          {% else %}
-          <li class="nav-item">
-            <a class="nav-link link-dark text-decoration-none" href="{% url 'signup' %}">Signup</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link link-dark text-decoration-none" href="{% url 'login' %}">Log in</a>
-          </li>
-          {% endif %}
-        </ul>
-        <form action="" class="col-md-1" id="forml">
-          <input type="text" placeholder="Search.." class="" name="search">
-        </form>
-      </div>
-    </div>
-  </nav>
-</header>
 <section id="home">
-  <div class="row d-flex">
-    <div class="col-9">
-      <div style="height: 500px;">
-        <div class="h-75 d-inline-block" style="width: 900px;">
+  <div class="row justify-content-center">
+    <div class="col-lg-9" style="overflow: hidden;">
           <div class="welcome">
             <h2>Welcome To Supply Chain Solutions</h2>
             <h4>Your all in one supplier at the click of a button</h4>
             <br>
           </div>
-        </div>
-      </div>
     </div>
 
-    <div class="col-3">
+    <div class="col-lg-3 d-flex justify-content-center">
       <div class="buttons">
         <button class="btn" type="button">Food</button>
         <br>
