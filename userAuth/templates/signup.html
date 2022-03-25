@@ -18,7 +18,7 @@
      <div class="signup-box">
         <h1>Sign Up</h1>
         <h4>New here! Sign up and make your sourcing easier</h4>
-        <form method="POST" action="{% url 'signup' %}">
+        <form method="POST" action="{% url 'signup' %}" class="p-2 mb-5 bg-body shadow rounded">
             {% csrf_token %}
             {{ form.errors }}
             <label>Username</label>
