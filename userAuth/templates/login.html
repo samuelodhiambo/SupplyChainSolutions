@@ -16,16 +16,18 @@
 <!-- This where all the content inside your opening and closing body tags will go.
      DO NOT INCLUDE THE BODY TAG. JUST THE CONTENT INSIDE IT. -->
      <section>
-        <form method="POST" action="{% url 'login' %}" class="form">
+        <form class="form p-3 mt-5 mb-5 bg-body shadow rounded">
             {% csrf_token %}
-           <strong><h2>Log In Account</h2></strong>
-           <ul class="inputs">
-               <li>Username<br><label for="Username">
-               <input type="text" id="username" placeholder="Username" name="username"></label></li> <br>
-               <li>Password<br><label for="Password">
-               <input type="password" id="password" placeholder="Password" name="password"></label></li> <br>
-           </ul>
-           <button type="submit" id="btn">LOG IN</button> 
+            <strong>
+                <h2>Log In Account</h2>
+            </strong>
+            <div class="inputs">
+                <label for="username">Username</label>
+                <input type="text" id="username" placeholder="Username" name="username"></label></li> <br>
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="Password" name="password"></label></li> <br>
+            </div>
+            <button class="btn btn-primary mt-3" type="submit" id="btn">LOG IN</button>
         </form>
 
     </section>
